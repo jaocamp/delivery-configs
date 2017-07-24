@@ -1,0 +1,41 @@
+server:
+  port: 9092
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+security:
+    oauth2:
+        client:
+            access-token-validity-seconds: 1800
+            authorized-grant-types: password,refresh_token
+            client-id: coderef
+            client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
+            resource-ids: resources
+            scope: read,write
+
+spring:
+    datasource:
+        data: classpath:/sql/data.sql
+        driver-class-name: com.mysql.jdbc.Driver
+        password: '1234'
+        platform: mysql
+        schema: classpath:/sql/schema.sql
+        url: jdbc:mysql://localhost/oauth?verifyServerCertificate=false&useSSL=false&requireSSL=false
+        username: root
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        generate-ddl: false
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    profiles:
+        active: dev
