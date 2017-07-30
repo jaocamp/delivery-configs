@@ -34,9 +34,9 @@ spring:
         username: root
     jpa:
         database-platform: org.hibernate.dialect.MySQLDialect
-        generate-ddl: true
+        generate-ddl: false
         hibernate:
-            ddl-auto: create
+            ddl-auto: update
         show-sql: true
     profiles:
         active: dev
