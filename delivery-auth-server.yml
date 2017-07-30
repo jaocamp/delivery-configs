@@ -36,7 +36,7 @@ spring:
         database-platform: org.hibernate.dialect.MySQLDialect
         generate-ddl: false
         hibernate:
-            ddl-auto: create-drop
+            ddl-auto: node
         show-sql: true
     profiles:
         active: dev
