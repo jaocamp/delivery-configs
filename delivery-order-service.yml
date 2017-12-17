@@ -28,14 +28,14 @@ spring:
         show-sql: true
 
 auth:
-  resourceId: resources
+  resourceId: orders
 authserver:
   hostname: http://localhost:9092
 security:
   oauth2:
     resource:
       userInfoUri: ${authserver.hostname}/user
-      id: resources
+      id: ${authserver.resourceId}
 
 
 
