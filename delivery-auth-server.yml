@@ -20,7 +20,7 @@ security:
             authorized-grant-types: password,refresh_token
             client-id: coderef
             client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
-            resource-ids: resources, orders
+            resource-ids: resources,orders
             scope: read,write
 
 spring:
